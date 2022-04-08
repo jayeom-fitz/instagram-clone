@@ -4,7 +4,7 @@ import { lazy } from "react";
 import AuthLayout from "views/layout/AuthLayout";
 
 // login routing
-const AuthLogin = lazy(() => import("views/pages/auth/Login"));
+const AuthLogin = lazy(() => import("views/pages/auth/login"));
 
 const AuthenticationRoutes = {
   path: "/",
