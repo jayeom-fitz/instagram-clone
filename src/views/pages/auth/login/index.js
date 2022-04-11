@@ -6,6 +6,8 @@ import SignUpInput from "components/inputs/SignUpInput";
 import LoginButton from "components/buttons/LoginButton";
 
 import Slider from "./Slider";
+import { Link } from "react-router-dom";
+import GoogleLoginButton from "components/buttons/GoogleLoginButton";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,14 +28,14 @@ function Login() {
           <div className="pt-6 mb-2.5">
             <SignUpInput
               type="email"
-              name="Email"
+              name="이메일"
               value={email}
               setValue={setEmail}
             />
 
             <SignUpInput
               type="password"
-              name="Password"
+              name="비밀번호"
               value={password}
               setValue={setPassword}
             />
@@ -42,7 +44,33 @@ function Login() {
               boolean={email && password}
               onSubmit={() => alert("aaa")}
             />
+
+            <div className="px-10 pt-2.5 pb-4 flex">
+              <div className="grow h-0.5 bg-slate-400 top-2.5 relative" />
+              <div className="text-sm font-semibold mx-4 text-slate-500">
+                또는
+              </div>
+              <div className="grow h-0.5 bg-slate-400 top-2.5 relative" />
+            </div>
+
+            <GoogleLoginButton />
+
+            <Link
+              className="block text-xs mt-3 text-center text-blue-600"
+              to="/"
+            >
+              비밀번호를 잊으셨나요?
+            </Link>
           </div>
+        </div>
+
+        <div className="border rounded border-slate-400 bg-slate-100 p-2.5 mb-2.5">
+          <p className="text-sm m-4 text-center">
+            계정이 없으신가요?
+            <Link className="ml-2 text-cyan-500 font-semibold" to="/signUp">
+              가입하기
+            </Link>
+          </p>
         </div>
       </div>
     </>

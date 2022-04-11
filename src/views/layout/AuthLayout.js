@@ -5,7 +5,7 @@ function AuthLayout() {
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="flex grow">
-        <div className="mx-8 my-auto flex items-center justify-center max-w-4xl grow">
+        <div className="mx-auto my-8 flex items-center justify-center max-w-4xl grow">
           <Outlet />
         </div>
       </div>
