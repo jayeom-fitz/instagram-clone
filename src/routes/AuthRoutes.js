@@ -1,10 +1,11 @@
 import { lazy } from "react";
 
-// project imports
+import Loadable from "components/loadable";
+
 import AuthLayout from "views/layout/AuthLayout";
 
-// login routing
-const AuthLogin = lazy(() => import("views/pages/auth/login"));
+const AuthLogin = Loadable(lazy(() => import("views/pages/auth/login")));
+const AuthSignUp = Loadable(lazy(() => import("views/pages/auth/SignUp")));
 
 const AuthenticationRoutes = {
   path: "/",
@@ -13,6 +14,10 @@ const AuthenticationRoutes = {
     {
       path: "/login",
       element: <AuthLogin />,
+    },
+    {
+      path: "/signUp",
+      element: <AuthSignUp />,
     },
   ],
 };

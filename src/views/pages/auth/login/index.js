@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
-import Logo from "assets/images/logo/logo-light.png";
-
-import SignUpInput from "components/inputs/SignUpInput";
-import LoginButton from "components/buttons/LoginButton";
+import { Link } from "react-router-dom";
 
 import Slider from "./Slider";
-import { Link } from "react-router-dom";
+
+import LoginLogo from "components/logo/LoginLogo";
+import LoginInput from "components/inputs/LoginInput";
+import LoginButton from "components/buttons/LoginButton";
 import GoogleLoginButton from "components/buttons/GoogleLoginButton";
 
 function Login() {
@@ -20,20 +19,18 @@ function Login() {
       <div className="grow max-w-sm flex flex-col justify-center">
         <div className="mb-2.5 p-2.5 border rounded border-slate-400 bg-slate-100">
           {/* Logo */}
-          <div className="text-center w-44 h-12 mx-auto mt-6 mb-3.5">
-            <img className="max-w-full" src={Logo} alt="Logo" />
-          </div>
+          <LoginLogo />
 
-          {/* Input ID & Password & Button */}
+          {/* Input ID & Password & Buttons */}
           <div className="pt-6 mb-2.5">
-            <SignUpInput
+            <LoginInput
               type="email"
               name="이메일"
               value={email}
               setValue={setEmail}
             />
 
-            <SignUpInput
+            <LoginInput
               type="password"
               name="비밀번호"
               value={password}
@@ -41,6 +38,7 @@ function Login() {
             />
 
             <LoginButton
+              text="로그인"
               boolean={email && password}
               onSubmit={() => alert("aaa")}
             />

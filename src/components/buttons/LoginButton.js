@@ -1,6 +1,6 @@
 import React from "react";
 
-function LoginButton({ boolean, onSubmit }) {
+function LoginButton({ boolean, text, onSubmit }) {
   return (
     <div className="px-10 py-2">
       <button
@@ -9,7 +9,7 @@ function LoginButton({ boolean, onSubmit }) {
         disabled={!boolean}
         onClick={onSubmit}
       >
-        로그인
+        {text}
       </button>
     </div>
   );

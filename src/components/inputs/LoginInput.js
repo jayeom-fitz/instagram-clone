@@ -1,6 +1,6 @@
 import React from "react";
 
-function SignUpInput({ type, name, value, setValue }) {
+function LoginInput({ type, name, value, setValue }) {
   return (
     <div className="px-10 mb-1.5">
       <div className="h-9 border border-slate-400 rounded relative">
@@ -24,4 +24,4 @@ function SignUpInput({ type, name, value, setValue }) {
   );
 }
 
-export default SignUpInput;
+export default LoginInput;
