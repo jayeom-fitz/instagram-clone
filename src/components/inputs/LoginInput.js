@@ -12,7 +12,7 @@ function LoginInput({ type, name, value, setValue }) {
           {name || "name"}
         </span>
         <input
-          className={`w-full h-full p-2 border-0 outline-0 bg-slate-100 text-slate-800 ${
+          className={`w-full h-full text-sm p-2 border-0 outline-0 bg-slate-100 text-slate-800 ${
             value && "pt-3.5 pr-0 pb-0.5 pl-2"
           }`}
           type={type || "text"}

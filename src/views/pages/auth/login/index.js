@@ -11,6 +11,7 @@ import GoogleLoginButton from "components/buttons/GoogleLoginButton";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("errrr");
 
   return (
     <>
@@ -52,6 +53,12 @@ function Login() {
             </div>
 
             <GoogleLoginButton />
+
+            {error && (
+              <div className="px-10 py-2">
+                <p className="text-center text-red-600 text-md">{error}</p>
+              </div>
+            )}
 
             <Link
               className="block text-xs mt-3 text-center text-blue-600"
