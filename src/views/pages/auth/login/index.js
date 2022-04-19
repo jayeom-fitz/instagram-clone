@@ -8,10 +8,28 @@ import LoginInput from "components/inputs/LoginInput";
 import LoginButton from "components/buttons/LoginButton";
 import GoogleLoginButton from "components/buttons/GoogleLoginButton";
 
+import { loginWithEmailAndPassword } from "services/user";
+
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("errrr");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("test1234");
+  const [error, setError] = useState("");
+
+  const onSubmit = async () => {
+    const result = await loginWithEmailAndPassword(email, password);
+
+    if (result.error !== undefined) {
+      if (result.error === "auth/invalid-email")
+        setError("유효한 이메일 주소를 입력하세요");
+      if (result.error === "auth/user-not-found")
+        setError(
+          "입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요."
+        );
+      if (result.error === "auth/wrong-password")
+        setError("잘못된 비밀번호입니다. 다시 확인하세요.");
+      return;
+    }
+  };
 
   return (
     <>
@@ -41,7 +59,7 @@ function Login() {
             <LoginButton
               text="로그인"
               boolean={email && password}
-              onSubmit={() => alert("aaa")}
+              onSubmit={onSubmit}
             />
 
             <div className="px-10 pt-2.5 pb-4 flex">
@@ -60,12 +78,12 @@ function Login() {
               </div>
             )}
 
-            <Link
+            {/* <Link
               className="block text-xs mt-3 text-center text-blue-600"
               to="/"
             >
               비밀번호를 잊으셨나요?
-            </Link>
+            </Link> */}
           </div>
         </div>
 
