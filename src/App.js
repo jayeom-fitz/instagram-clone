@@ -3,11 +3,18 @@ import { BrowserRouter } from "react-router-dom";
 
 import Routes from "routes";
 
+import UserContext from "contexts/user";
+import useAuthListener from "hooks/use_auth_listener";
+
 function App() {
+  const { user } = useAuthListener();
+
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <UserContext.Provider value={{ user }}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 

@@ -1,12 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import useAuthListener from "hooks/use_auth_listener";
 import useLoginCheck from "hooks/use_login_check";
 
 function AuthLayout() {
-  const { user } = useAuthListener();
-  useLoginCheck(user, false, "/");
+  useLoginCheck(false, "/");
 
   return (
     <div className="w-screen h-screen flex flex-col">

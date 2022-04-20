@@ -1,16 +1,17 @@
 import React from "react";
 
-import useAuthListener from "hooks/use_auth_listener";
 import useLoginCheck from "hooks/use_login_check";
 
 import { logout } from "services/user/sign_in";
 
+import Header from "components/header";
+
 function MainLayout() {
-  const { user } = useAuthListener();
-  useLoginCheck(user, true, "/login");
+  useLoginCheck(true, "/login");
 
   return (
-    <div>
+    <div className="bg-gray-100">
+      <Header />
       <div>MainLayout</div>
       <button onClick={() => logout()}>logout</button>
     </div>
