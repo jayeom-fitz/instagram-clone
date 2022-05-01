@@ -6,7 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { doesUserExist } from "./search";
-import { setNames } from "./set_data";
+import { setProfile } from "./set_data";
 
 export async function signUpWithEmailAndPassword(email, password) {
   const result = createUserWithEmailAndPassword(auth, email, password)
@@ -34,10 +34,11 @@ export async function loginWithGoogleProvider() {
   signInWithPopup(auth, googleProvider).then(async (result) => {
     const check = await doesUserExist(result.user.uid);
     if (!check) {
-      await setNames(
+      await setProfile(
         result.user.uid,
         result.user.displayName,
-        result.user.uid.slice(5)
+        result.user.uid.slice(15),
+        result.user.photoURL
       );
     }
   });

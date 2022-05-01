@@ -4,16 +4,16 @@ import { lazy } from "react";
 import MainLayout from "views/layout/MainLayout";
 
 // main menu routing
-// const Content = lazy(() => import('views/pages/main/content/'));
+const UserChannel = lazy(() => import("views/pages/main/UserChannel"));
 
 const MainRoutes = {
   path: "/",
   element: <MainLayout />,
   children: [
-    // {
-    //   path: '/content',
-    //   element: <Content />,
-    // },
+    {
+      path: "/:username",
+      element: <UserChannel />,
+    },
   ],
 };
 

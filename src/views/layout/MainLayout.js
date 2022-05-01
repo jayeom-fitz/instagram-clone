@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 import useLoginCheck from "hooks/use_login_check";
 
@@ -12,6 +13,7 @@ function MainLayout() {
   return (
     <div className="bg-gray-100">
       <Header />
+      <Outlet />
       <div>MainLayout</div>
       <button onClick={() => logout()}>logout</button>
     </div>

@@ -8,7 +8,7 @@ import GoogleLoginButton from "components/buttons/GoogleLoginButton";
 
 import {
   doesUsernameExist,
-  setNames,
+  setProfile,
   signUpWithEmailAndPassword,
 } from "services/user";
 
@@ -45,7 +45,7 @@ function SignUp() {
       return;
     }
 
-    await setNames(result.uid, fullname, username);
+    await setProfile(result.uid, fullname, username, "");
     alert("회원 가입이 완료되었습니다.");
     navigate("/login");
   };
