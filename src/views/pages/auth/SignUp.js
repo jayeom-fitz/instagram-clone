@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import LoginLogo from "components/logo/LoginLogo";
-import LoginInput from "components/inputs/LoginInput";
-import LoginButton from "components/buttons/LoginButton";
-import GoogleLoginButton from "components/buttons/GoogleLoginButton";
+import {
+  GoogleLoginButton,
+  LoginButton,
+  LoginInput,
+  LoginLogo,
+} from "components/auth";
 
 import {
   doesUsernameExist,

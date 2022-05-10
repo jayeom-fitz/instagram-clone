@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import MainLogo from "components/logo/MainLogo";
-import SearchInput from "components/inputs/SearchInput";
-import SearchUserBox from "components/boxes/SearchUserBox";
+import HeaderLogo from "./HeaderLogo";
+import SearchInput from "./SearchInput";
+import SearchUserBox from "./search_user_box";
+import Icons from "./icons";
 
 function Header() {
   const [searchValue, setSearchValue] = useState("");
@@ -11,7 +12,7 @@ function Header() {
     <header className="h-16 bg-white border-b border-gray-300">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-between items-center align-center h-full">
-          <MainLogo />
+          <HeaderLogo />
 
           <div className="hidden md:block w-full max-w-xs h-9 relative">
             <SearchInput setSearchValue={setSearchValue} />
@@ -22,7 +23,7 @@ function Header() {
             />
           </div>
 
-          <div>icons</div>
+          <Icons />
         </div>
       </div>
     </header>

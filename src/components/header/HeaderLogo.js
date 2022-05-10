@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Logo from "assets/images/logo/logo-light.png";
 
-function MainLogo() {
+function HeaderLogo() {
   return (
     <div className="text-center w-28 h-8 align-center">
       <Link to="/">
@@ -13,4 +13,4 @@ function MainLogo() {
   );
 }
 
-export default MainLogo;
+export default HeaderLogo;

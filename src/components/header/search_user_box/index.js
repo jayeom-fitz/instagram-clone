@@ -1,5 +1,7 @@
-import MiniProfileLink from "components/user/MiniProfileLink";
 import React, { useEffect, useState } from "react";
+
+import MiniProfileLink from "./MiniProfileLink";
+
 import { getUsersByUsername } from "services/user";
 
 function SearchUserBox({ searchValue, setSearchValue }) {

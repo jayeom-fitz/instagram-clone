@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 import Slider from "./Slider";
 
-import LoginLogo from "components/logo/LoginLogo";
-import LoginInput from "components/inputs/LoginInput";
-import LoginButton from "components/buttons/LoginButton";
-import GoogleLoginButton from "components/buttons/GoogleLoginButton";
+import {
+  GoogleLoginButton,
+  LoginButton,
+  LoginInput,
+  LoginLogo,
+} from "components/auth";
 
 import { loginWithEmailAndPassword } from "services/user";
 
